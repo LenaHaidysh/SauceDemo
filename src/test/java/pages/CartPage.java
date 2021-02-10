@@ -1,13 +1,17 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 public class CartPage extends BasePage {
 
     public static final String PRODUCT_DETAILS = "//*[text()='%s']";
     public static final By REMOVE_BUTTON = By.className("cart_button");
     public static final By CHECKOUT_BUTTON = By.cssSelector(".checkout_button");
+    public static final By CART_HEADER = By.cssSelector(".subheader");
 
 
     public CartPage(WebDriver browser) {
@@ -30,5 +34,11 @@ public class CartPage extends BasePage {
         browser.findElement(CHECKOUT_BUTTON).click();
     }
 
-
+    public void isPageOpened3() {
+        try {
+            wait.until((ExpectedConditions.visibilityOfElementLocated(CART_HEADER)));
+        } catch (TimeoutException ex) {
+            Assert.fail("Страница с корзиной не была загружена");
+        }
+    }
 }

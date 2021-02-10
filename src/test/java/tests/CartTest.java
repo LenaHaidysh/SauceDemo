@@ -27,6 +27,7 @@ public class CartTest extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
         productsPage.buyProduct("Sauce Labs Backpack");
         cartPage.openCart();
+        cartPage.isPageOpened3();
         cartPage.removeFromCart();
         int a = browser.findElements(By.className("removed_cart_item")).size();
         assertEquals(a, 1, "Добавленный товар не удален из корзины");
@@ -39,6 +40,7 @@ public class CartTest extends BaseTest {
         productsPage.buyProduct("Sauce Labs Backpack");
         cartPage.openCart();
         cartPage.gotoCheckout();
+        checkoutPage.isPageOpened4();
         WebElement CheckoutInformation = browser.findElement(By.className("subheader"));
         String actualResult = CheckoutInformation.getText();
         assertEquals(actualResult, "Checkout: Your Information", "Невозможно перейти к чекауту");
