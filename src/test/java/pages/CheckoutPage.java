@@ -19,6 +19,12 @@ public class CheckoutPage extends BasePage {
         super(browser);
     }
 
+    @Override
+    public CheckoutPage open() {
+        browser.get("");
+        return new CheckoutPage(browser);
+    }
+
     public void checkout(String firstName, String lastName, String zipCode) {
         browser.findElement(FIRST_NAME_INPUT).sendKeys(firstName);
         browser.findElement(LAST_NAME_INPUT).sendKeys(lastName);

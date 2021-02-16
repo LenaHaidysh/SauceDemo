@@ -18,6 +18,12 @@ public class CartPage extends BasePage {
         super(browser);
     }
 
+    @Override
+    public CartPage open() {
+        browser.get("https://www.saucedemo.com/cart.html");
+        return new CartPage(browser);
+    }
+
     public void openCart() {
         browser.get("https://www.saucedemo.com/cart.html");
     }
