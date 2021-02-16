@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends BasePage {
+public class LoginPageFluent extends BasePage {
     //вставляем локаторы,элементы, с которыми будем взаимодействовать'
     public static final By LOGIN_INPUT = By.id("user-name");
     public static final By PASSWORD_INPUT = By.id("password");
@@ -11,19 +11,20 @@ public class LoginPage extends BasePage {
     public static final By ERROR_MESSAGE = By.cssSelector("[data-test=error]");
 
 
-    public LoginPage(WebDriver browser) {
+    public LoginPageFluent(WebDriver browser) {
         super(browser);
     }
 
-    public LoginPage open() {
+    public LoginPageFluent open() {
         browser.get("https://www.saucedemo.com/");
-        return new LoginPage(browser);
+        return this; //возвращает элемент этого же класса
     }
 
-    public void login(String userName, String password) {
+    public ProductsPage login(String userName, String password) {
         browser.findElement(LOGIN_INPUT).sendKeys(userName);
         browser.findElement(PASSWORD_INPUT).sendKeys(password);
         browser.findElement(LOGIN_BUTTON).click();
+        return new ProductsPage(browser); //можно удалить инициализацию страницы из базы
     }
 
     public String getErrorMessage() {
