@@ -8,7 +8,7 @@ import static org.testng.Assert.assertEquals;
 
 public class CartTest extends BaseTest {
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void checkProductDetails() {
 
         loginPage.open();
