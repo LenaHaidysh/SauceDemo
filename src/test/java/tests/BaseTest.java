@@ -24,12 +24,12 @@ public class BaseTest {
     CheckoutPage checkoutPage;
 
     @BeforeMethod
-    public void setup(ITestResult testResult) {
+    public void setup() { //itestresult был в скобках
         //System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe"); не нужен так как есть генератор
         browser = new ChromeDriver(CapabilitiesGenerator.getChromeOptions());
         browser.manage().window().maximize();//нужно в каждом проекте, на весь экран;
         browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        testResult.getTestContext().setAttribute("driver", browser);
+        //testResult.getTestContext().setAttribute("driver", browser);
         loginPage = new LoginPageFluent(browser);
         productsPage = new ProductsPage(browser);
         cartPage = new CartPage(browser);
