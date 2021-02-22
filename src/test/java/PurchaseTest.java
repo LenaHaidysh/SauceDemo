@@ -10,7 +10,7 @@ import static org.testng.Assert.assertEquals;
 
 public class PurchaseTest {
 
-    @Test
+    @Test (enabled = false)
     public void userShouldBeAddToCart() {
         String productName = "Sauce Labs Bolt T-Shirt";
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");

@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class ProductTest extends BaseTest {
 
-    @Test
+    @Test (retryAnalyzer = Retry.class) //чтобы запустить несколько раз тест, если тест падает
     public void productSholdBeAvailable3() {
         loginPage
                 .open()

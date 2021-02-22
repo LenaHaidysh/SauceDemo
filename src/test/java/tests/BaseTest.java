@@ -2,6 +2,8 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -24,12 +26,17 @@ public class BaseTest {
     CheckoutPage checkoutPage;
 
     @BeforeMethod
-    public void setup() { //itestresult был в скобках
+    public void setup(ITestContext context) { //itestresult был в скобках
         //System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe"); не нужен так как есть генератор
         browser = new ChromeDriver(CapabilitiesGenerator.getChromeOptions());
+        //if(System.getProperty("browser").equals("firefox")) {
+        //    browser = new FirefoxDriver();
+        //} else {
+        //    browser = new ChromeDriver();
+       // }
         browser.manage().window().maximize();//нужно в каждом проекте, на весь экран;
         browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //testResult.getTestContext().setAttribute("driver", browser);
+        context.setAttribute("driver", browser);
         loginPage = new LoginPageFluent(browser);
         productsPage = new ProductsPage(browser);
         cartPage = new CartPage(browser);

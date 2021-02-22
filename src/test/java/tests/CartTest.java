@@ -12,7 +12,8 @@ public class CartTest extends BaseTest {
     public void checkProductDetails() {
 
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(System.getProperty("user", ""), "secret_sauce"); //вычитываем
+        // из командной строки имя юзера
         productsPage.buyProduct("Sauce Labs Backpack");
         cartPage.openCart();
         cartPage.seeProductDetails("Sauce Labs Backpack");
