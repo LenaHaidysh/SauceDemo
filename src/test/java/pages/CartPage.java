@@ -1,8 +1,6 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -37,6 +35,7 @@ public class CartPage extends BasePage {
     }
 
     public void gotoCheckout() {
+        ((TakesScreenshot) browser).getScreenshotAs(OutputType.BYTES); //драйвер (браузер) стань скриншотом
         browser.findElement(CHECKOUT_BUTTON).click();
     }
 

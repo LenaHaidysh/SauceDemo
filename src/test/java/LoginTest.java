@@ -10,7 +10,7 @@ import static org.testng.Assert.assertEquals;
 
 public class LoginTest {
 
-    @Test
+    @Test (enabled = false)
     public void userShouldBeLoginByValidData() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver browser = new ChromeDriver();
