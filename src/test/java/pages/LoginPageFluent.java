@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPageFluent extends BasePage {
-    //вставляем локаторы,элементы, с которыми будем взаимодействовать'
+    //вставляем локаторы,элементы, с которыми будем взаимодействовать
     public static final By LOGIN_INPUT = By.id("user-name");
     public static final By PASSWORD_INPUT = By.id("password");
     public static final By LOGIN_BUTTON = By.cssSelector("[value=LOGIN]");
