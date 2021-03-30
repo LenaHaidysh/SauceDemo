@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class CapabilitiesGenerator {
 
     public static ChromeOptions getChromeOptions() {
-        String driverPath = "src/test/resources/webdrivers";
+        String driverPath = "src/test/resources";
         ChromeOptions options = new ChromeOptions();
         String os = System.getProperty("os.name").toLowerCase();//вернет ос и выберет драйвер из ресурсов для конкретной ос
         System.out.println("Operational system: " + os + "; Driver path: " + driverPath);
