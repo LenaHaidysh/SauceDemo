@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -9,6 +10,7 @@ import static org.testng.Assert.assertEquals;
 public class CheckoutTest extends BaseTest {
 
     @Test
+    @Attachment(value = "screenshot", type = "image/png")
     public void checkoutWithValidData() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");

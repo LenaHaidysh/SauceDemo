@@ -1,0 +1,37 @@
+Locators Saucedemo
+
+1).class=.inventory_item_name
+2).class1.class2=.btn_primary.btn_inventory
+3) .class1 .class2?
+4)*
+5) #id=#contents_wrapper
+6) input=ul (tag)
+7) element.class=div.social (tag содержит класс)
+8)element,element=ul,div
+9) element element= div nav (ul li)
+10) element>element= div>nav (ищем все навы внутри дива)
+11) element+element=div+a (после дива на том же уровне сразу идет а)
+12) element1~element2=a~div(все дивы, которые стоят сразу перед а)
+13)[attribute]=[id]	[target]              	Selects all elements with a target attribute
+14)[attribute=value] = [class="btn_primary btn_inventory"]        	[target=_blank]	Selects all elements with target="_blank"
+15)[attribute~=value]=[class~=social]	      [title~=flower]	Selects all elements with a title attribute containing the word "flower"
+16)[attribute|=value]	      [lang|=en]	Selects all elements with a lang attribute value starting with "en"
+17)[attribute^=value]
+
+
+By.xpath("//*[contains(text(),'text')]");
+By.xpath("//*[text()='Sauce Labs Onesie']"); - ищем любой тег,где есть текст. надо 
+быть уверенным, что текст уникален
+By.xpath("//tag[contains(text(),'text')]");
+
+//*[text()='Sauce Labs Onesie']/../../..//button - найдем кнопку возле конкретного товара, от текста поднимаеися до общего 
+div class=inventory_item
+
+locator = String.format("//*contains(text(), '%s')]/../../..//%s", name, "button");
+
+//*[text()='Sauce Labs Onesie']/ancestor::div[@class='inventory_item']//button - ищем всех предков, содержащих текст
+//*[text()='Sauce Labs Onesie']/ancestor::*[contains(@class,'inventory_item')]//button
+
+
+
+

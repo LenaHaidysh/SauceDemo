@@ -2,9 +2,7 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestContext;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -24,6 +22,12 @@ public class BaseTest {
     ProductsPage productsPage;
     CartPage cartPage;
     CheckoutPage checkoutPage;
+    //public String user; 7/48 2303
+    //public String pass; 7/48 2303
+    //user = System.getenv().getOrDefault("user", PropertyReader.getProperty("user"));//вычитывание из файла PropertyReader
+    //user=System.getenv
+    //Faker faker = new Faker();
+    //String username = faker.name().lastName();
 
     @BeforeMethod
     public void setup(ITestContext context) { //itestresult был в скобках
@@ -33,7 +37,7 @@ public class BaseTest {
         //    browser = new FirefoxDriver();
         //} else {
         //    browser = new ChromeDriver();
-       // }
+        // }
         browser.manage().window().maximize();//нужно в каждом проекте, на весь экран;
         browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         context.setAttribute("driver", browser);
