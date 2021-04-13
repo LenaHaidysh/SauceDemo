@@ -7,7 +7,7 @@ public class LoginPage extends BasePage {
     //вставляем локаторы,элементы, с которыми будем взаимодействовать'
     public static final By LOGIN_INPUT = By.id("user-name");
     public static final By PASSWORD_INPUT = By.id("password");
-    public static final By LOGIN_BUTTON = By.cssSelector("[value=LOGIN]");
+    public static final By LOGIN_BUTTON = By.cssSelector("[value=Login]");
     public static final By ERROR_MESSAGE = By.cssSelector("[data-test=error]");
 
 
