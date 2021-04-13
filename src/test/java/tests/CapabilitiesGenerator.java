@@ -21,7 +21,7 @@ public class CapabilitiesGenerator {
         options.addArguments("--ignore-certificate-errors");//
         options.addArguments("--disable-popup-blocking");//чтобы ниче не блокировала
         options.addArguments("--disable-notifications");//чтобы не было подписаться на обновления
-        options.addArguments("--headless"); // only if you are ACTUALLY running headless без интерфейса
+        //options.addArguments("--headless"); // only if you are ACTUALLY running headless без интерфейса
         //options.addArguments("--no-sandbox"); //https://stackoverflow.com/a/50725918/1689770
         //options.addArguments("--disable-infobars"); //https://stackoverflow.com/a/43840128/1689770
         //options.addArguments("--disable-dev-shm-usage"); //https://stackoverflow.com/a/50725918/1689770
