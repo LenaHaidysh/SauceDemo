@@ -49,10 +49,11 @@ workflows:
   periodical:
     triggers:
       - schedule:
-          cron: "0 0 12 ? * 5#3"
+          cron: "5 4 * 12 2"
           filters:
             branches:
               only:
-                - master
+                - circleci-project-setup
+
     jobs:
       - ui-tests
